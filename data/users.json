@@ -1,0 +1,143 @@
+{
+  "owners": [
+    {
+      "name": "音猫｡",
+      "id": "957885295251034112",
+      "social": {
+        "href": "rin_pineapple",
+        "type": "twitter"
+      },
+      "description": "様々な開発を請け負うしがないデベロッパー。"
+    },
+    {
+      "name": "恋鈴",
+      "id": "1012694311130906665",
+      "social": {
+        "href": "koirdsuzu",
+        "type": "twitter"
+      },
+      "description": "数多の人脈とカリスマ性を持つ鯖管理のエキスパート。"
+    }
+  ],
+  "admins": [
+    {
+      "name": "もち",
+      "id": "1290950698216980523",
+      "social": {
+        "href": "omonukko",
+        "type": "twitter"
+      },
+      "description": "表から裏まで色々できる何でも屋。"
+    },
+    {
+      "name": "はること",
+      "id": "1004365048887660655",
+      "social": {
+        "href": "harukoto_vlrnt",
+        "type": "twitter"
+      },
+      "description": "マイクラ用に自宅鯖を貸してくれるつよい人。"
+    },
+    {
+      "name": "ぱいちゃ",
+      "id": "1095588875411390587",
+      "social": {
+        "href": "voidpro_dev",
+        "type": "twitter"
+      },
+      "description": "彼の手にかかればなんだってできる。"
+    },
+    {
+      "name": "あぬ",
+      "id": "1297270754806726718",
+      "description": "Kawaii Developer."
+    },
+    {
+      "name": "かめすた",
+      "id": "213535369881190401",
+      "social": {
+        "href": "Kmesuta",
+        "type": "twitter"
+      },
+      "description": "元50人クラフト参加者のかめぱわ〜。"
+    },
+    {
+      "name": "くも",
+      "id": "922647793347207168",
+      "social": {
+        "href": "kumo_baka",
+        "type": "twitter"
+      },
+      "description": "元50人クラフト参加者のマイクラプラグインのエキスパート。"
+    }
+  ],
+  "moderators": [
+    {
+      "name": "すばる",
+      "id": "1126494799327940659",
+      "social": {
+        "href": "khmsbr",
+        "type": "twitter"
+      },
+      "description": "とてもよい絵描き。"
+    },
+    {
+      "name": "きの",
+      "id": "1301893603328786464",
+      "description": "きの虐対象。きのょわ。"
+    },
+    {
+      "name": "ぴの",
+      "id": "1217442117505384559",
+      "description": "圧倒的癒やし枠。ぴのさいつよ。"
+    },
+    {
+      "name": "わど",
+      "id": "1246626000670949420",
+      "description": "暇人鯖のヤクザ屋さん。"
+    },
+    {
+      "name": "アリ",
+      "id": "1064317417150488608",
+      "description": "多分頭いい。"
+    },
+    {
+      "name": "仮面",
+      "id": "880994751237718037",
+      "description": "仮面ライダーオタク。"
+    }
+  ],
+  "operators": [
+    {
+      "name": "おかか",
+      "id": "967659800034934814",
+      "social": {
+        "href": "Okakajp25",
+        "type": "twitter"
+      },
+      "description": "インフラ整備のつよい人。"
+    },
+    {
+      "name": "Hina",
+      "id": "741370295826382869",
+      "description": "プラグインのつよい人。"
+    }
+  ],
+  "planners": [
+    {
+      "name": "さとる",
+      "id": "1231904859184173096",
+      "description": "Buzz Illustrator."
+    },
+    {
+      "name": "マイケル",
+      "id": "1131937821062594701",
+      "description": "おっ、そうだな。"
+    },
+    {
+      "name": "Growing",
+      "id": "1302613450689740885",
+      "description": "最年少運営。"
+    }
+  ]
+}

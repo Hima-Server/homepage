@@ -1,0 +1,27 @@
+[
+  {
+    "title": "ホーム",
+    "href": "/"
+  },
+  {
+    "title": "マイクラ",
+    "href": "/minecraft.html"
+  },
+  {
+    "title": "スタッフ",
+    "href": "/staff.html"
+  },
+  {
+    "title": "支援",
+    "href": "/donate.html"
+  },
+  {
+    "title": "歴史",
+    "href": "/history.html"
+  },
+  {
+    "title": "ステータス",
+    "href": "https://status.hima-server.com/",
+    "blank": true
+  }
+]

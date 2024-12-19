@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
+    <link rel="alternate" hreflang="en" href="https://www.hima-server.com/en/">
+
+    <title>Redirecting...</title>
+    <meta name="description" content="暇人鯖のホームページです">
+    <meta name="keywords" content="暇人鯖,discord,minecraft">
+    <meta name="theme-color" content="#ffff00">
+
+    <meta property="og:title" content="Redirecting...">
+    <meta property="og:description" content="暇人鯖のホームページです">
+    <meta property="og:image" content="https://www.hima-server.com/img/logo.png">
+    <meta property="og:url" content="https://www.hima-server.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Redirecting...">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Redirecting...">
+    <meta name="twitter:description" content="暇人鯖のホームページです">
+    <meta name="twitter:image" content="https://www.hima-server.com/img/logo.png">
+    <meta name="twitter:url" content="https://www.hima-server.com">
+    <meta name="twitter:site" content="@hima_discord">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="https://www.hima-server.com/img/icon.png">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+  </head>
+  <body>
+    <div class="main-content">
+      <h1 id="redirecting-msg"></h1>
+      <div id="redirecting-description"></div>
+      <div id="confirmation-box">
+        <p id="confirmation-text">
+          以下のURLにリダイレクトします。<br>
+          <strong id="url-placeholder"></strong><br>
+          よろしいですか？
+        </p>
+        <button class="confirm" id="confirm-yes">はい</button>
+        <button class="cancel" id="confirm-no">いいえ</button>
+      </div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectUrl = urlParams.get('url');
+      const confirmationText = document.getElementById('confirmation-text');
+      const urlPlaceholder = document.getElementById('url-placeholder');
+      
+      if (redirectUrl) {
+        const urlWithoutHttp = redirectUrl.replace(/^https?:\/\//, '').endsWith('/') ? redirectUrl.replace(/^https?:\/\//, '').slice(0, -1) : redirectUrl.replace(/^https?:\/\//, '');
+        console.log(urlWithoutHttp)
+        urlPlaceholder.textContent = `${urlWithoutHttp}`;
+
+        document.getElementById('confirm-yes').addEventListener('click', function() {
+          document.getElementById('confirmation-box').style.display = 'none';
+          document.getElementById('redirecting-msg').textContent = 'Redirecting...';
+          document.getElementById('redirecting-description').innerHTML = `
+            <p>
+              リダイレクトしない場合、<a href="${redirectUrl}">コチラ</a>をクリックしてください。
+            <p>  
+          `;
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, 3000);
+        });
+
+        document.getElementById('confirm-no').addEventListener('click', function() {
+          document.getElementById('confirmation-box').style.display = 'none';
+          document.getElementById('redirecting-msg').textContent = 'Cancelled.';
+          document.getElementById('redirecting-description').innerHTML = `
+            <p>
+              ウィンドウを閉じます。
+            <p>  
+          `;
+          setTimeout(() => {
+            window.close();
+          }, 3000);
+        });
+      } else {
+        document.getElementById('confirm-yes').style.display = 'none';
+        document.getElementById('confirm-no').style.display = 'none';
+        confirmationText.textContent = 'リダイレクト先のURLがありません。';
+        setTimeout(() => {
+          window.close();
+        }, 3000);
+      }
+    </script>
+    <script src="/script.js"></script>
+  </body>
+</html>
