@@ -19,6 +19,12 @@ async function fetchText(path) {
   console.log(`Successfully fetched ${path}.`, data);
   return data;
 };
+function replaceLinkAndImage(markdownText) {
+  markdownText = markdownText.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" title="$1" alt="$1">');
+  markdownText = markdownText.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank">$1</a>');
+
+  return markdownText;
+}
 
 function replaceMarkdown(markdownText) {
   markdownText = markdownText.replace(/\<br\>/g, '\n');

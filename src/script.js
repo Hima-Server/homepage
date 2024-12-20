@@ -65,16 +65,15 @@ if (minecraftRule) {
 
 // Format History
 function formatHistory(content) {
-  if (!content.endsWith('<br>')) content = `${content}<br>`;
+  if (!content.endsWith('<br>')) content += '<br>';
   content = content.replace(/(.*?)\<br\>/g, '<p class="history-content">$1</p>');
   content = content.replace(/'(.*?)'/g, '<span class="history-description">$1</span>');
   content = content.replace(/\<p class="history-content"\>!!(.*?)!!\<\/p\>/g, '<h2 class="history-year">$1</h2>');
   content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   content = content.replace(/\b(\d{2}\/\d{2})\b/g, '<span class="history-date">$1</span>');
   content = content.replace(/\\n/g, '<br>');
-  content = replaceMarkdown(content);
 
-  return content;
+  return replaceLinkAndImage(content);
 }
 
 // History
