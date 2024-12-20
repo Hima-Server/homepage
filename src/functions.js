@@ -47,6 +47,8 @@ function replaceMarkdown(markdownText) {
   markdownText = markdownText.replace(/^## (.*?)$\n/gim, '<h2>$1</h2>');
   markdownText = markdownText.replace(/^# (.*?)$\n/gim, '<h1>$1</h1>');
 
+  markdownText = markdownText.replace(/^---\n/gim, '<hr>');
+
   markdownText = markdownText.replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>');
   markdownText = markdownText.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
   markdownText = markdownText.replace(/\*(.*?)\*/gim, '<em>$1</em>');

@@ -52,6 +52,10 @@ h5 {
   font-weight: normal;
 }
 
+hr {
+  border-color: #00008b;
+}
+
 strong {
   font-weight: bolder;
   color: #00008b;
