@@ -30,7 +30,7 @@
   </head>
   <body>
     <div class="main-content">
-      <h1 id="redirecting-msg"></h1>
+      <h2 id="redirecting-msg"></h2>
       <div id="redirecting-description"></div>
       <div id="confirmation-box">
         <p id="confirmation-text">
@@ -59,7 +59,7 @@
           document.getElementById('redirecting-msg').textContent = 'Redirecting...';
           document.getElementById('redirecting-description').innerHTML = `
             <p>
-              リダイレクトしない場合、<a href="${redirectUrl}">コチラ</a>をクリックしてください。
+              切り替わらない場合、<a href="${redirectUrl}">コチラ</a>をクリックしてください。
             <p>  
           `;
           setTimeout(() => {
@@ -88,6 +88,7 @@
         }, 3000);
       }
     </script>
-    <script src="/script.js"></script>
+    <script src="/src/functions.js"></script>
+    <script src="/src/script.js"></script>
   </body>
 </html>

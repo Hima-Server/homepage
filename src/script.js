@@ -1,3 +1,13 @@
+// Home
+const joinDiscord = document.getElementById('join-discord');
+if (joinDiscord) {
+  (async () => {
+    const data = await fetchJson('/data/links.json');
+    const discordInvite = data[data.findIndex(item => item.type === 'discord')].href;
+    joinDiscord.href = discordInvite;
+  })();
+}
+
 // Minecraft
 const isWorking = document.getElementById('minecraft-is-working');
 if (isWorking) {
@@ -11,6 +21,13 @@ const minecraftDescription = document.getElementById('minecraft-description');
 if (minecraftDescription) {
   (async () => {
     minecraftDescription.innerHTML = replaceMarkdown(await fetchText('/data/minecraft/description.txt'));
+  })();
+}
+
+const minecraftRule = document.getElementById('minecraft-rule');
+if (minecraftRule) {
+  (async () => {
+    minecraftRule.innerHTML = replaceMarkdown(await fetchText('/data/minecraft/rule.txt'));
   })();
 }
 
