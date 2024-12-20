@@ -10,7 +10,7 @@ if (isWorking) {
 const minecraftDescription = document.getElementById('minecraft-description');
 if (minecraftDescription) {
   (async () => {
-    minecraftDescription.innerHTML = replaceMarkdownCodes(await fetchText('/data/minecraft/description.txt'));
+    minecraftDescription.innerHTML = replaceMarkdown(await fetchText('/data/minecraft/description.txt'));
   })();
 }
 
@@ -55,7 +55,7 @@ function formatHistory(content) {
   content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   content = content.replace(/\b(\d{2}\/\d{2})\b/g, '<span class="history-date">$1</span>');
   content = content.replace(/\\n/g, '<br>');
-  content = replaceMarkdownLinks(content);
+  content = replaceMarkdown(content);
 
   return content;
 }

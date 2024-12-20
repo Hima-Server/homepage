@@ -20,14 +20,72 @@ async function fetchText(path) {
   return data;
 };
 
-function replaceMarkdownCodes(input) {
-  return input.replace(/`(.*?)`/g, '<code>$1</code>');
-}
+function replaceMarkdown(markdownText) {
+  markdownText = markdownText.replace(/\<br\>/g, '\n');
 
-function replaceMarkdownLinks(input) {
-  return input.replace(/\[(.+?)\]\((https?:\/\/\S+?)\)/g, (match, text, url) => {
-    return `<a href="${url}" target="_blank">${text}</a>`;
+  const escapePlaceholders = {};
+
+  markdownText = markdownText.replace(/\\\\/g, (match, offset) => {
+    const placeholder = `&ESCAPEDBACKSLASH!!${offset}!!;`;
+    escapePlaceholders[placeholder] = '\\';
+    return placeholder;
   });
+
+  markdownText = markdownText.replace(/\\([*_~|`>[\]()\-!])/g, (match, p1, offset) => {
+    const placeholder = `&ESCAPEDCHAR!!${offset}!!;`;
+    escapePlaceholders[placeholder] = p1;
+    return placeholder;
+  });
+
+  markdownText = markdownText.replace(/```([a-zA-Z]*)\n([\s\S]*?)\n```/gim, '<pre><code class="language-$1">$2</code></pre>');
+  markdownText = markdownText.replace(/`([^`]+)`/gim, '<code>$1</code>');
+
+  markdownText = markdownText.replace(/^###### (.*?)$\n/gim, '<h6>$1</h6>');
+  markdownText = markdownText.replace(/^##### (.*?)$\n/gim, '<h5>$1</h5>');
+  markdownText = markdownText.replace(/^#### (.*?)$\n/gim, '<h4>$1</h4>');
+  markdownText = markdownText.replace(/^### (.*?)$\n/gim, '<h3>$1</h3>');
+  markdownText = markdownText.replace(/^## (.*?)$\n/gim, '<h2>$1</h2>');
+  markdownText = markdownText.replace(/^# (.*?)$\n/gim, '<h1>$1</h1>');
+
+  markdownText = markdownText.replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>');
+  markdownText = markdownText.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+  markdownText = markdownText.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+  markdownText = markdownText.replace(/~~(.*?)~~/gim, '<del>$1</del>');
+
+  markdownText = markdownText.replace(/___(.*?)___/gim, '<u><strong>$1</strong></u>');
+  markdownText = markdownText.replace(/__(.*?)__/gim, '<u>$1</u>');
+  markdownText = markdownText.replace(/_(.*?)_/gim, '<em>$1</em>');
+
+  markdownText = markdownText.replace(/\|\|(.*?)\|\|/gim, '<mark>$1</mark>');
+
+  markdownText = markdownText.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" title="$1" alt="$1">');
+  markdownText = markdownText.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank">$1</a>');
+
+  markdownText = markdownText.replace(/(\d+\.\s+.*(?:\n\d+\.\s+.*)*)/gim, (match) => {
+    const items = match
+      .split('\n')
+      .map(line => line.replace(/^\d+\.\s+(.*)/gim, '<li>$1</li>'))
+      .join('');
+    return `<ol>${items}</ol>`;
+  });
+
+  markdownText = markdownText.replace(/(\-\s+.*(?:\n\-\s+.*)*)/gim, (match) => {
+    const items = match
+      .split('\n')
+      .map(line => line.replace(/^\-\s+(.*)/gim, '<li>$1</li>'))
+      .join('');
+    return `<ul>${items}</ul>`;
+  });
+
+  markdownText = markdownText.replace(/> (.*$)\n/gim, '<blockquote>$1</blockquote>');
+
+  for (const placeholder in escapePlaceholders) {
+    const value = escapePlaceholders[placeholder];
+    const regex = new RegExp(placeholder, 'g');
+    markdownText = markdownText.replace(regex, value);
+  }
+
+  return markdownText.replace(/\n/g, '<br>');
 }
 
 async function getDiscordUserInfo(userId) {
@@ -80,8 +138,8 @@ let menuToggle, menuToggleIcon, menu;
 function switchMenuToggleIcon(bool) {
   menuToggle.classList.toggle('rotated', bool);
   setTimeout(() => {
-    menuToggle.textContent = bool ? '×' : '≡';
-  }, 300);
+    menuToggle.textContent = bool ? '✕' : '≡';
+  }, 50);
 }
 
 (async () => {
