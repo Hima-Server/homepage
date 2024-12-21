@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+@import url('/styles/donate.css');
 @import url('/styles/history.css');
 @import url('/styles/home.css');
 @import url('/styles/redirect.css');
@@ -324,7 +325,7 @@ footer p {
   height: auto;
 }
 
-.description {
+#description {
   background: #f5f5f5;
   border-radius: 5px;
   padding: 10px;

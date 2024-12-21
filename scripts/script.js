@@ -63,6 +63,34 @@ if (minecraftRule) {
   }
 })();
 
+// Donate
+const donateChannel = document.getElementById('donate-channel');
+if (donateChannel) {
+  (async () => {
+    donateChannel.href = (await fetchJson('/data/donate/data.json')).channel;
+  })();
+}
+
+const goDonate = document.getElementById('go-donate');
+if (goDonate) {
+  (async () => {
+    goDonate.href = (await fetchJson('/data/donate/data.json')).channel;
+  })();
+}
+
+const donateDescriptions = document.querySelectorAll('.donate-description');
+donateDescriptions.forEach(async (description) => {
+  const dataPath = description.getAttribute('data-path');
+  if (dataPath) {
+    try {
+      const text = await fetchText(`/data/donate/${dataPath}.txt`);
+      description.innerHTML = replaceMarkdown(text);
+    } catch (error) {
+      console.error(`Failed to fetch or process markdown for ${dataPath}:`, error);
+    }
+  }
+});
+
 // Format History
 function formatHistory(content) {
   if (!content.endsWith('<br>')) content += '<br>';

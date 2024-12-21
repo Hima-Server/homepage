@@ -1,0 +1,10 @@
+/* Donate */
+#go-donate button {
+  margin: 40px 0;
+  width: 100%;
+}
+
+#go-donate::after {
+  display: none;
+  content: none;
+}
