@@ -1,0 +1,22 @@
+/* History */
+#history {
+  display: block;
+}
+
+.history-content {
+  display: grid;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.history-date {
+  font-weight: bolder;
+  border-bottom: 1px solid #000000;
+}
+
+.history-description {
+  font-size: 14px;
+  padding: 5px;
+}

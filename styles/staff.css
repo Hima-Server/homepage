@@ -1,0 +1,125 @@
+/* Staff */
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 10px;
+}
+
+.member-header {
+  margin: 0;
+}
+
+h2.member-header {
+  border-bottom: none;
+}
+
+h5.member-header {
+  clear: both;
+  text-align: left;
+  font-size: 16px;
+  padding: 0;
+  border-bottom: 2px solid #000000;
+}
+
+.member {
+  flex: 0 0 calc(33% - 10px);
+  width: calc(33% - 10px);
+  height: auto;
+  min-height: 250px;
+  margin: 5px 0;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.member h3 {
+  clear: both;
+  text-align: left;
+  margin: 10px 12px 0;
+  padding: 0;
+}
+
+.member h3 a {
+  font-size: 28px;
+}
+
+.member h5 {
+  clear: both;
+  text-align: left;
+  font-size: 10px;
+  font-weight: bolder;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0 15px;
+  padding: 0;
+  border-bottom: 1px solid #000000;
+}
+
+.member a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.member a::after {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.member-description {
+  display: block;
+  margin: 12px 0;
+}
+
+.member-description img {
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 50%;
+  width: 80%;
+  max-width: 220px;
+}
+.member-description p {
+  font-size: 12px;
+}
+
+.member-description a {
+  color: #0000ff;
+}
+
+.member-description a:hover {
+  color: #00008b;
+}
+
+.social-twitter::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  background-image: url('/img/svg/twitter_w.svg');
+  filter: invert(39%) sepia(97%) saturate(7486%) hue-rotate(239deg) brightness(95%) contrast(104%);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.social-twitter:hover::before {
+  filter: invert(39%) sepia(97%) saturate(7486%) hue-rotate(239deg) brightness(95%) contrast(80%);
+  transform: scale(1.1);
+}
+
+a.social-twitter::after {
+  display: none;
+  content: none;
+}
+
+@media (max-width: 900px) {
+  .member {
+    flex: 0 0 calc(100% - 20px);
+  }
+
+  .member h3 {
+    font-size: 14px;
+  }
+}

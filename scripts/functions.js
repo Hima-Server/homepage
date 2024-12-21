@@ -1,3 +1,7 @@
+const body = document.body;
+const main = document.getElementsByClassName('main-content')[0];
+
+// Base
 async function fetchJson(path) {
   console.log(`Try to fetch ${path}.`);
   const response = await fetch(path);
@@ -100,9 +104,6 @@ async function getDiscordUserInfo(userId) {
   const url = `https://avatar-cyan.vercel.app/api/${userId}`;
   return (await fetchJson(url)).avatarUrl;
 }
-
-const body = document.body;
-const main = document.getElementsByClassName('main-content')[0];
 
 // Redirect
 document.addEventListener('click', (event) => {

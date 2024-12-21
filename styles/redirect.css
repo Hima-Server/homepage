@@ -1,0 +1,46 @@
+/* Redirect */
+#redirecting-msg, #redirecting-description {
+  text-align: center;
+  border: none;
+}
+
+#redirecting-description p {
+  font-size: 10px;
+}
+
+#confirmation-box {
+  background-color: #f5f5f5;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+}
+
+#confirmation-box button {
+  display: inline-block;
+  margin: 2px;
+}
+
+#confirmation-text {
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#url-placeholder {
+  font-size: 14px;
+  display: inline;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+#url-placeholder a {
+  pointer-events: none;
+  text-decoration: none;
+  color: #000000;
+}

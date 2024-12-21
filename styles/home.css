@@ -1,0 +1,9 @@
+/* Home */
+#join-discord button {
+  width: 100%;
+}
+
+#join-discord::after {
+  display: none;
+  content: none;
+}
