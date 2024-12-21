@@ -214,5 +214,5 @@ menu.addEventListener('click', (e) => {
 
 // Footer
 const footer = document.createElement('footer');
-footer.innerHTML = `<p>© 2023 - 2024 暇人鯖 All rights reserved.<p>`
+footer.innerHTML = `<p>© 2023 - ${new Date().getFullYear()} 暇人鯖 All rights reserved.<p>`
 body.appendChild(footer);
