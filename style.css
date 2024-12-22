@@ -347,8 +347,15 @@ footer p {
   text-decoration: none;
 }
 
-.notfound {
-  text-align: center;
+h1.notfound {
+  font-size: 24px;
+}
+
+p.notfound {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  font-size: 12px;
 }
 
 /* Mobile */

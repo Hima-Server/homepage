@@ -216,3 +216,13 @@ menu.addEventListener('click', (e) => {
 const footer = document.createElement('footer');
 footer.innerHTML = `<p>© 2023 - ${new Date().getFullYear()} 暇人鯖 All rights reserved.<p>`
 body.appendChild(footer);
+
+// Not Found
+const notFoundCount = document.getElementById('notfound-count');
+if (notFoundCount) {
+  let i = parseInt(notFoundCount.textContent);
+  setInterval(() => {
+    i--;
+    if (i >= 0) notFoundCount.textContent = `${i}`;
+  }, 1000);
+}
