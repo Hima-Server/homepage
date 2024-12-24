@@ -19,7 +19,7 @@
       "description": "数多の人脈とカリスマ性を持つ鯖管理のエキスパート。"
     }
   ],
-  "admins": [
+  "sub-owners": [
     {
       "name": "もち",
       "id": "1290950698216980523",
@@ -37,6 +37,13 @@
         "type": "twitter"
       },
       "description": "マイクラ用に自宅鯖を貸してくれるつよい人。"
+    }
+  ],
+  "admins": [
+    {
+      "name": "きの",
+      "id": "1301893603328786464",
+      "description": "きの虐対象。きのょわ。"
     },
     {
       "name": "ぱいちゃ",
@@ -82,9 +89,18 @@
       "description": "とてもよい絵描き。"
     },
     {
-      "name": "きの",
-      "id": "1301893603328786464",
-      "description": "きの虐対象。きのょわ。"
+      "name": "すみれ",
+      "id": "890563563717033984",
+      "social": {
+        "href": "sumire_8691",
+        "type": "twitter"
+      },
+      "description": "速筆のつよ絵師。"
+    },
+    {
+      "name": "ルル",
+      "id": "964774371774304307",
+      "description": "ルル虐対象。ルルょわ。"
     },
     {
       "name": "ぴの",
@@ -127,6 +143,10 @@
     {
       "name": "さとる",
       "id": "1231904859184173096",
+      "social": {
+        "href": "satu_r_",
+        "type": "twitter"
+      },
       "description": "Buzz Illustrator."
     },
     {

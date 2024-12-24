@@ -37,7 +37,7 @@ if (minecraftRule) {
     twitter: "https://twitter.com/"
   };
   const users = await fetchJson('/data/users.json');
-  const perms = ['owners', 'admins', 'moderators', 'operators', 'planners'];
+  const perms = ['owners', 'sub-owners', 'admins', 'moderators', 'operators', 'planners'];
   for (const perm of perms) {
     const members = document.getElementById(perm);
     if (members) {
