@@ -91,6 +91,33 @@ donateDescriptions.forEach(async (description) => {
   }
 });
 
+const donators = document.getElementById('donators');
+if (donators) {
+  (async () => {
+    const data = await fetchJson('/data/donate/users.json');
+    const allDonators = data.donators;
+    const donatorsCount = document.getElementById('donators-count');
+    if (donatorsCount) donatorsCount.textContent = allDonators.length.toLocaleString();
+
+    for (let i = 0; i < data.anonymous; i++) {
+      allDonators.push({ name: '匿名', id: 'anonymous' });
+    }
+    for (const user of allDonators) {
+      const userData = user.id === 'anonymous' ? { avatarUrl: '/img/assets/anonymous.png', username: 'anonymous' } : await getDiscordUserInfo(user.id);
+      const member = document.createElement('div');
+      member.className = 'donator';
+      member.innerHTML = `
+        <img src="${userData.avatarUrl}" title="${user.name}" alt="${user.name}">
+        <div class="donator-name">
+          <h3><a href="https://discord.com/users/${user.id}" target="_blank">${user.name}</a></h3>
+          <h5>ID: ${user.id === 'anonymous' ? `<code id="anonymous-id">${userData.username}</code>` : userData.username}</h5>
+        </div>
+      `
+      donators.appendChild(member);
+    }
+  })();
+}
+
 // Format History
 function formatHistory(content) {
   if (!content.endsWith('<br>')) content += '<br>';
