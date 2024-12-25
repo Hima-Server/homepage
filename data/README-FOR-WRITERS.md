@@ -32,7 +32,7 @@ __下線__
 _斜体_
 
 リンク: [Google](https://www.google.com)
-
+リダイレクトなしリンク: #[Google](https://www.google.com)
 画像: ![alt text](https://via.placeholder.com/150)
 
 1. 番号付きリスト項目1
@@ -63,6 +63,7 @@ _斜体_
 <u>下線</u>
 <em>斜体</em>
 <a href="https://www.google.com" target="_blank">Google</a>
+<a href="https://www.google.com">Google</a>
 <img src="https://via.placeholder.com/150" title="alt text" alt="alt text">
 <ol>
   <li>番号付きリスト項目1</li>

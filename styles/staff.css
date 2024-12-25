@@ -107,7 +107,7 @@ h5.member-header {
 
 .social-twitter:hover::before {
   filter: invert(39%) sepia(97%) saturate(7486%) hue-rotate(239deg) brightness(95%) contrast(80%);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 a.social-twitter::after {

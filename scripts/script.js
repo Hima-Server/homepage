@@ -71,10 +71,13 @@ if (donateChannel) {
   })();
 }
 
-const goDonate = document.getElementById('go-donate');
-if (goDonate) {
+const goDonates = document.getElementsByClassName('go-donate');
+if (goDonates?.length > 0) {
   (async () => {
-    goDonate.href = (await fetchJson('/data/donate/data.json')).channel;
+    const href = (await fetchJson('/data/donate/data.json')).channel;
+    for (const goDonate of goDonates) {
+      goDonate.href = href;
+    }
   })();
 }
 
@@ -83,7 +86,7 @@ donateDescriptions.forEach(async (description) => {
   const dataPath = description.getAttribute('data-path');
   if (dataPath) {
     try {
-      const text = await fetchText(`/data/donate/${dataPath}.txt`);
+      const text = await fetchText(dataPath);
       description.innerHTML = replaceMarkdown(text);
     } catch (error) {
       console.error(`Failed to fetch or process markdown for ${dataPath}:`, error);
@@ -96,21 +99,23 @@ if (donators) {
   (async () => {
     const data = await fetchJson('/data/donate/users.json');
     const allDonators = data.donators;
-    const donatorsCount = document.getElementById('donators-count');
-    if (donatorsCount) donatorsCount.textContent = allDonators.length.toLocaleString();
 
     for (let i = 0; i < data.anonymous; i++) {
       allDonators.push({ name: '匿名', id: 'anonymous' });
     }
+
+    const donatorsCount = document.getElementById('donators-count');
+    if (donatorsCount) donatorsCount.textContent = allDonators.length.toLocaleString();
+
     for (const user of allDonators) {
       const userData = user.id === 'anonymous' ? { avatarUrl: '/img/assets/anonymous.png', username: 'anonymous' } : await getDiscordUserInfo(user.id);
       const member = document.createElement('div');
       member.className = 'donator';
       member.innerHTML = `
-        <img src="${userData.avatarUrl}" title="${user.name}" alt="${user.name}">
+        <img src="${userData.avatarUrl ?? '/img/assets/anonymous.png'}" title="${user.name}" alt="${user.name}">
         <div class="donator-name">
-          <h3><a href="https://discord.com/users/${user.id}" target="_blank">${user.name}</a></h3>
-          <h5>ID: ${user.id === 'anonymous' ? `<code id="anonymous-id">${userData.username}</code>` : userData.username}</h5>
+          <h3><a href="https://discord.com/users/${user.id}" target="_blank">${userData.username ? user.name : '不明なユーザー'}</a></h3>
+          <h5>ID: ${(userData.username ? (user.id === 'anonymous' ? `<code id="anonymous-id">${userData.username}</code>` : userData.username) : '<code>unknown</code>')}</h5>
         </div>
       `
       donators.appendChild(member);
@@ -140,3 +145,26 @@ if (history) {
     history.innerHTML = `<p>${historyData}</p>`
   })();
 }
+
+// Terms privacy Policy
+const tppLinks = document.getElementById('t-pp-links');
+if (tppLinks) {
+  (async () => {
+    const tppText = await fetchText('/data/t-pp/links.txt');
+    const tppList = replaceMarkdown(tppText);
+    tppLinks.innerHTML = tppList;
+  })();
+}
+
+const tppDescriptions = document.querySelectorAll('.t-pp');
+tppDescriptions.forEach(async (description) => {
+  const dataPath = description.getAttribute('data-path');
+  if (dataPath) {
+    try {
+      const text = await fetchText(dataPath);
+      description.innerHTML = dataPath === 'LICENSE' ? text : replaceMarkdown(text);
+    } catch (error) {
+      console.error(`Failed to fetch or process markdown for ${dataPath}:`, error);
+    }
+  }
+});

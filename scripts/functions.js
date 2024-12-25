@@ -71,6 +71,7 @@ function replaceMarkdown(markdownText) {
   markdownText = markdownText.replace(/\|\|(.*?)\|\|/gim, '<mark>$1</mark>');
 
   markdownText = markdownText.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" title="$1" alt="$1">');
+  markdownText = markdownText.replace(/#\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>');
   markdownText = markdownText.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank">$1</a>');
 
   markdownText = markdownText.replace(/(\d+\.\s+.*(?:\n\d+\.\s+.*)*)/gim, (match) => {
