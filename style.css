@@ -35,7 +35,7 @@ body {
 h1 {
   color: #00008b;
   font-weight: normal;
-  font-size: 60px;
+  font-size: 45px;
   margin: 5px 0;
   border-bottom: 3px solid #00008b;
 }
@@ -102,7 +102,7 @@ a[target="_blank"]::after {
 
 a[target="_blank"]:hover::after {
   filter: invert(48%) sepia(77%) saturate(5212%) hue-rotate(190deg) brightness(120%) contrast(80%);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 p {
@@ -111,7 +111,7 @@ p {
 }
 
 ul li {
-  font-size: 16px;
+  font-size: 12px;
   padding: 6px;
 }
 
@@ -130,7 +130,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   border-color: #00a0ff;
   color: #00a0ff;
 }
@@ -248,7 +248,7 @@ footer p {
 }
 
 .menu li a:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .menu-toggle {
@@ -272,7 +272,7 @@ footer p {
 .menu-toggle:hover {
   color: #808080;
   background-color: transparent;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .menu-toggle.rotated {
@@ -311,7 +311,7 @@ footer p {
 
 .social-links img:hover {
   filter: invert(48%) sepia(77%) saturate(5212%) hue-rotate(190deg) brightness(120%) contrast(80%);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .social-links a::after {
@@ -334,12 +334,11 @@ footer p {
 .t-pp {
   font-family: sans-serif;
   background-color: #d3d3d3;
+  padding: 10px;
+  margin: 10px;
+  font-size: 12px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.t-pp p {
-  font-size: 12px;
 }
 
 .t-pp a {
@@ -382,10 +381,6 @@ p.notfound {
 
   p {
     font-size: 14px;
-  }
-
-  ul li {
-    font-size: 16px;
   }
 
   #home {

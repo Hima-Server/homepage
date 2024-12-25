@@ -1,10 +1,11 @@
 /* Donate */
-#go-donate button {
+.go-donate button {
   margin: 40px 0;
   width: 100%;
 }
 
-#go-donate::after {
+a[target="_blank"].go-donate::after {
+  content: "";
   display: none;
   content: none;
 }
