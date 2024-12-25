@@ -40,5 +40,15 @@
     </div>
     <script src="/scripts/functions.js"></script>
     <script src="/scripts/script.js"></script>
+    <script>
+      // Redirect
+      (async () => {
+        const paths = await fetchJson('/data/redirects.json'); 
+        const pathName = window.location.pathname.replace('.html', '');
+        for (const path of Object.keys(paths)) {
+          if (path === pathName) window.location.href = paths[path];
+        }
+      })();
+    </script>
   </body>
 </html>
