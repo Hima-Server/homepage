@@ -34,8 +34,8 @@
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
-      <h1 class="notfound">404 Not Found.</h1>
-      <p class="notfound">お探しのページは見つかりませんでした。</p>
+      <h1 id="notfound-title" class="notfound"></h1>
+      <p id="notfound-description" class="notfound"></p>
       <p class="notfound"><span id="notfound-count">60</span> 秒後、<a href="/">ホーム</a>に遷移します。</p>
     </div>
     <script src="/scripts/functions.js"></script>
@@ -44,9 +44,16 @@
       // Redirect
       (async () => {
         const paths = await fetchJson('/data/redirects.json'); 
-        const pathName = window.location.pathname.replace('.html', '');
-        for (const path of Object.keys(paths)) {
-          if (`/${path}` === pathName) window.location.href = paths[path];
+        const pathName = window.location.pathname.replace('/', '').replace('.html', '');
+        if (paths[pathName]) {
+          document.getElementById('notfound-title').textContent = 'Redirecting...';
+          document.getElementById('notfound-description').innerHTML = `切り替わらない場合、<a href="${paths[pathName]}">コチラ</a>をクリックしてください。`;
+          setTimeout(() => {
+            window.location.href = paths[pathName];
+          }, 3000);
+        } else {
+          document.getElementById('notfound-title').textContent = '404 Not Found.';
+          document.getElementById('notfound-description').textContent = 'お探しのページは見つかりませんでした。';
         }
       })();
     </script>
