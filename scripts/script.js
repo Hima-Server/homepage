@@ -39,7 +39,7 @@ if (minecraftRule) {
   const users = await fetchJson('/data/users.json');
   const perms = ['owners', 'sub-owners', 'admins', 'moderators', 'operators', 'planners'];
   for (const perm of perms) {
-    const members = document.getElementById(perm);
+    const members = document.getElementById(`${perm}-div`);
     if (members) {
       for (const user of users[perm]) {
         const data = await getDiscordUserInfo(user.id);
@@ -94,7 +94,7 @@ donateDescriptions.forEach(async (description) => {
   }
 });
 
-const donators = document.getElementById('donators');
+const donators = document.getElementById('donators-div');
 if (donators) {
   (async () => {
     const data = await fetchJson('/data/donate/users.json');

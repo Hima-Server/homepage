@@ -6,7 +6,6 @@
 
     <meta charset="UTF-8">
     <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
-    <link rel="alternate" hreflang="ca" href="https://www.hima-server.com/en/">
 
     <title>暇人鯖</title>
     <meta name="description" content="暇人鯖のホームページです">
@@ -34,6 +33,7 @@
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
+      <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
       <h1 id="notfound-title" class="notfound"></h1>
       <p id="notfound-description" class="notfound"></p>
       <p class="notfound"><span id="notfound-count">60</span> 秒後、<a href="/">ホーム</a>に遷移します。</p>
@@ -44,7 +44,7 @@
       // Redirect
       (async () => {
         const paths = await fetchJson('/data/redirects.json'); 
-        const pathName = window.location.pathname.replace('/', '').replace('.html', '');
+        const pathName = window.location.pathname.replace('.html', '');
         if (paths[pathName]) {
           document.getElementById('notfound-title').textContent = 'Redirecting...';
           document.getElementById('notfound-description').innerHTML = `切り替わらない場合、<a href="${paths[pathName]}">コチラ</a>をクリックしてください。`;

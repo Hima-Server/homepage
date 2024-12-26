@@ -1,27 +1,45 @@
 [
   {
     "title": "ホーム",
-    "href": "/"
+    "href": "/",
+    "lastmod": "2024-12-26",
+    "changefreq": "monthly",
+    "priority": "1.0"
   },
   {
     "title": "マイクラ",
-    "href": "/minecraft.html"
+    "href": "/minecraft.html",
+    "lastmod": "2024-12-26",
+    "changefreq": "monthly",
+    "priority": "0.9"
   },
   {
     "title": "スタッフ",
-    "href": "/staff.html"
+    "href": "/staff.html",
+    "lastmod": "2024-12-26",
+    "changefreq": "weekly",
+    "priority": "0.8"
   },
   {
     "title": "支援",
-    "href": "/donate.html"
+    "href": "/donate.html",
+    "lastmod": "2024-12-26",
+    "changefreq": "weekly",
+    "priority": "0.7"
   },
   {
     "title": "歴史",
-    "href": "/history.html"
+    "href": "/history.html",
+    "lastmod": "2024-12-26",
+    "changefreq": "weekly",
+    "priority": "0.8"
   },
   {
     "title": "利用規約・個人情報保護方針",
-    "href": "/t-pp.html"
+    "href": "/t-pp.html",
+    "lastmod": "2024-12-26",
+    "changefreq": "monthly",
+    "priority": "0.1"
   },
   {
     "title": "ステータス",

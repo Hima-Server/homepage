@@ -1,6 +1,12 @@
 const body = document.body;
 const main = document.getElementsByClassName('main-content')[0];
 
+// Is JavaScript Enabled?
+const isJavaScriptEnabled = document.getElementById('is-javascript-enabled');
+if (isJavaScriptEnabled) {
+  isJavaScriptEnabled.style.display = 'none';
+}
+
 // Base
 async function fetchJson(path) {
   console.log(`Try to fetch ${path}.`);

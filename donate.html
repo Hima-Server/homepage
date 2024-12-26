@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
-    <link rel="alternate" hreflang="en" href="https://www.hima-server.com/en/">
 
     <title>暇人鯖 - 支援</title>
     <meta name="description" content="暇人鯖のホームページです">
@@ -31,6 +30,7 @@
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
+      <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
       <h1>支援</h1>
       <h3>支援は<a id="donate-channel" target="_blank">コチラ</a>から！</h3>
       <p>
@@ -49,10 +49,12 @@
       <a class="go-donate" target="_blank">
         <button>支援する</button>
       </a>
-      <h2>支援者様</h2>
-      <p>暇人鯖は <span id="donators-count">0</span> 人に支援をいただきました！</p>
-      <p>敬称略</p>
-      <div id="donators"></div>
+      <section id="donators">
+        <h2>支援者様</h2>
+        <p>暇人鯖は <span id="donators-count">0</span> 人に支援をいただきました！</p>
+        <p>敬称略</p>
+        <div id="donators-div"></div>
+      </section>
       <a class="go-donate" target="_blank">
         <button>支援する</button>
       </a>
