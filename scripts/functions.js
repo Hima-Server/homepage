@@ -134,7 +134,7 @@ document.addEventListener('click', (event) => {
 const pagetop = document.getElementById('pagetop');
 if (pagetop) {
   const number = Math.floor(Math.random() * 10);
-  pagetop.style.backgroundImage = `url("/img/top-background/${number}.png")`
+  pagetop.style.backgroundImage = `url("/img/top-backgrounds/${number}.png")`
   const home = document.createElement('div');
   home.id = 'home';
 
