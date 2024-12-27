@@ -25,14 +25,28 @@
     "href": "/donate.html",
     "lastmod": "2024-12-26",
     "changefreq": "weekly",
-    "priority": "0.7"
+    "priority": "0.8"
   },
   {
     "title": "歴史",
     "href": "/history.html",
     "lastmod": "2024-12-26",
     "changefreq": "weekly",
-    "priority": "0.8"
+    "priority": "0.7"
+  },
+  {
+    "title": "ギャラリー",
+    "href": "/gallery.html",
+    "lastmod": "2024-12-27",
+    "changefreq": "weekly",
+    "priority": "0.7"
+  },
+  {
+    "title": "時計",
+    "href": "/clock.html",
+    "lastmod": "2024-12-27",
+    "changefreq": "monthly",
+    "priority": "0.2"
   },
   {
     "title": "利用規約・個人情報保護方針",
@@ -44,6 +58,11 @@
   {
     "title": "ステータス",
     "href": "https://status.hima-server.com/",
+    "blank": true
+  },
+  {
+    "title": "旧ホームページ",
+    "href": "https://hima.elpher.org/",
     "blank": true
   }
 ]

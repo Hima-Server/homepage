@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
+
+    <title>暇人鯖</title>
+    <meta name="description" content="暇人鯖のホームページです">
+    <meta name="keywords" content="暇人鯖,discord,minecraft">
+    <meta name="theme-color" content="#ffff00">
+
+    <meta property="og:title" content="暇人鯖">
+    <meta property="og:description" content="暇人鯖のホームページです">
+    <meta property="og:image" content="https://www.hima-server.com/img/logo.png">
+    <meta property="og:url" content="https://www.hima-server.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="暇人鯖">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="暇人鯖">
+    <meta name="twitter:description" content="暇人鯖のホームページです">
+    <meta name="twitter:image" content="https://www.hima-server.com/img/logo.png">
+    <meta name="twitter:url" content="https://www.hima-server.com">
+    <meta name="twitter:site" content="@hima_discord">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="https://www.hima-server.com/img/icon.png">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <style>
+      #happynewyear {
+        font-family: 'Times New Roman', Times, serif;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        color: #daa520;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 10000;
+      }
+
+      #happynewyear > * {
+        margin-top: 100px;
+        color: #daa520;
+        border: none;
+      }
+
+      .countdown {
+        background-color: #f5f5f5;
+        color: #333333;
+        text-align: center;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .countdown p {
+        margin: 0;
+        padding: 5px;
+        font-size: 40px;
+      }
+
+      @media (max-width: 900px) {
+        .countdown p {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="happynewyear" style="display: none;">
+      <h1 id="akeome"></h1>
+      <p id="kotoyoro"></p>
+    </div>
+    <div id="pagetop"></div>
+    <div class="main-content">
+      <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
+      <div class="countdown">
+        <p id="clock"><span id="year">--</span>-<span id="month">--</span>-<span id="day">--</span> <span id="hour">--</span>:<span id="minute">--</span>:<span id="second">--</span></p>
+      </div>
+    </div>
+    <script src="/scripts/functions.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const jstOffset = 9 * 60 * 60 * 1000;
+        const jstNow = new Date(now + jstOffset);
+
+        const year = jstNow.getFullYear();
+        const month = String(jstNow.getMonth() + 1).padStart(2, '0');
+        const day = String(jstNow.getDate()).padStart(2, '0');
+
+        const hour = String(jstNow.getHours()).padStart(2, '0');
+        const minute = String(jstNow.getMinutes()).padStart(2, '0');
+        const second = String(jstNow.getSeconds()).padStart(2, '0');
+
+        document.getElementById('year').textContent = year;
+        document.getElementById('month').textContent = month;
+        document.getElementById('day').textContent = day;
+        document.getElementById('hour').textContent = hour;
+        document.getElementById('minute').textContent = minute;
+        document.getElementById('second').textContent = second;
+
+        if (year === 2025 && month === '01' && day === '01' && hour === '00' && minute === '00' && second === '00') {
+          happyNewYear();
+        }
+      }
+      happyNewYear();
+      function happyNewYear() {
+        document.getElementById('clock').style.color = '#daa520';
+        const div = document.getElementById('happynewyear');
+        const message = document.getElementById('akeome');
+        message.textContent = 'Goodbye 2024...'
+        div.style.display = 'block';
+
+        const originalText = message.textContent;
+        const newText = "Happy New Year 2025!!!";
+        let index = 0;
+
+        const removeInterval = setInterval(() => {
+          if (message.textContent.length > 0) {
+            message.textContent = message.textContent.slice(0, -1);
+          } else {
+            clearInterval(removeInterval);
+
+            const addInterval = setInterval(() => {
+              if (index < newText.length) {
+                message.textContent += newText[index];
+                index++;
+              } else {
+                clearInterval(addInterval);
+                setTimeout(() => {
+                  document.getElementById('kotoyoro').textContent = '今年も暇人鯖をよろしくお願いします！';
+                  setTimeout(() => {
+                    div.style.display = 'none';
+                  }, 10000);
+                }, 300)
+              }
+            }, 200);
+          }
+        }, 100);
+      }
+
+      setInterval(updateClock, 500);
+      updateClock();
+    </script>
+  </body>
+</html>
