@@ -88,7 +88,7 @@
       function updateClock() {
         const now = new Date();
         const jstOffset = 9 * 60 * 60 * 1000;
-        const jstNow = new Date(now + jstOffset);
+        const jstNow = new Date(now.getTime() + now.getTimezoneOffset() * 60 * 1000 + jstOffset); 
 
         const year = jstNow.getFullYear();
         const month = String(jstNow.getMonth() + 1).padStart(2, '0');
