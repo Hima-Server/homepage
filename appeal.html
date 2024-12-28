@@ -40,8 +40,8 @@
     <div id="pagetop"></div>
     <div class="main-content">
       <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
-      <h1>BAN解除申請</h1>
-      <p>
+      <h1 id="rickroll-h1">BAN解除申請</h1>
+      <p id="rickroll-message">
         このページは過去に暇人鯖のDiscord・マイクラでBANされたユーザーのために作られました。<br>
         あなたは過去の行いを反省し、行いを改めますか？
       </p>
@@ -61,15 +61,13 @@
           "そんなものはない",
           "You are an idiot ☺",
           "またのお越しをお待ちしております(笑)",
-          "なんで解除されると思ったんですか(正論)",
-          "馬鹿げてるぜ！",
-          "BAN者、お前はもう詰んでるぜ！",
-          "しかし　うまく　きまらなかった！",
-          "暇人鯖の　BAN解除申請には　効果が　ない　みたいだ……"
+          "なんで解除されると思ったんですか(正論)"
         ];
 
         popup(messages[Math.floor(Math.random() * messages.length)]);
         setTimeout(() => {
+          document.getElementById('rickroll-h1').textContent = 'BANNED!'
+          document.getElementById('rickroll-message').textContent = 'Rick Roll Time!';
           const video = document.querySelector('video');
           video.style.display = 'block';
           window.scrollTo(0, document.body.scrollHeight);
