@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
 
-    <title>暇人鯖 - BAN解除申請</title>
+    <title>暇人鯖 - Rick Roll</title>
     <meta name="description" content="暇人鯖のホームページです">
     <meta name="keywords" content="暇人鯖,discord,minecraft">
     <meta name="theme-color" content="#ffff00">
 
-    <meta property="og:title" content="暇人鯖 - BAN解除申請">
+    <meta property="og:title" content="暇人鯖 - Rick Roll">
     <meta property="og:description" content="暇人鯖のホームページです">
     <meta property="og:image" content="https://www.hima-server.com/img/logo.png">
     <meta property="og:url" content="https://www.hima-server.com">
@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="暇人鯖">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="暇人鯖 - BAN解除申請">
+    <meta name="twitter:title" content="暇人鯖 - Rick Roll">
     <meta name="twitter:description" content="暇人鯖のホームページです">
     <meta name="twitter:image" content="https://www.hima-server.com/img/logo.png">
     <meta name="twitter:url" content="https://www.hima-server.com">
@@ -26,39 +26,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="apple-touch-icon" sizes="2048x2048" href="https://www.hima-server.com/img/icon.png">
     <link rel="stylesheet" href="/style.css" type="text/css">
+    <style>
+      video {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
-      <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
-      <h1>BAN解除申請</h1>
-      <p>
-        このページは過去に暇人鯖のDiscord・マイクラでBANされたユーザーのために作られました。<br>
-        あなたは過去の行いを反省し、行いを改めますか？
-      </p>
-      <button class="maxwidth" onclick="appeal()">申請する</button>
+      <video autoplay>
+        <source src="https://cdn.oto.pet/vid/rickroll.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
     </div>
     <script src="/scripts/functions.js"></script>
     <script src="/scripts/script.js"></script>
     <script>
-      function appeal() {
-        const messages = [
-          "スカ",
-          "大凶",
-          "そんなものはない",
-          "You are an idiot ☺",
-          "またのお越しをお待ちしております(笑)",
-          "なんで解除されると思ったんですか(正論)",
-          "馬鹿げてるぜ！",
-          "BAN者、お前はもう詰んでるぜ！",
-          "しかし　うまく　きまらなかった！",
-          "暇人鯖の　BAN解除申請には　効果が　ない　みたいだ……"
-        ];
-
-        popup(messages[Math.floor(Math.random() * messages.length)]);
-        setTimeout(() => {
-          window.open('/rickroll.html', '_blank');
-        }, 1000);
+      window.onload = function() {
+        window.scrollTo(0, document.body.scrollHeight)
       }
     </script>
   </body>

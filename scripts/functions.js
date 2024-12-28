@@ -27,24 +27,24 @@ function popup(message) {
 }
 
 async function fetchJson(path) {
-  console.log(`Try to fetch ${path}.`);
+  console.log(`Try to fetch ${path}`);
   const response = await fetch(path);
   if (!response.ok) return console.error(`Failed to fetch ${path}.`);
   const rawData = await response.text();
   const data = JSON.parse(rawData);
-  console.log(`Successfully fetched ${path}.`, data);
+  console.log(`Successfully fetched ${path}:`, data);
   return data;
 };
 
 async function fetchText(path) {
   console.log(`Try to fetch ${path}.`);
   const response = await fetch(path);
-  if (!response.ok) return console.error(`Failed to fetch ${path}.`);
+  if (!response.ok) return console.error(`Failed to fetch ${path}`);
   const rawData = await response.text();
   let data = rawData;
   if (data.endsWith('\n')) data = data.slice(0, -1);
   data = data.replace(/\n/g, '<br>');
-  console.log(`Successfully fetched ${path}.`, data);
+  console.log(`Successfully fetched ${path}:`, data);
   return data;
 };
 function replaceLinkAndImage(markdownText) {

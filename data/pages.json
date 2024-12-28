@@ -63,6 +63,11 @@
     "priority": "0.1"
   },
   {
+    "title": "無料プレゼント",
+    "href": "https://r.oto.pet/present4u",
+    "blank": true
+  },
+  {
     "title": "ステータス",
     "href": "https://status.hima-server.com/",
     "blank": true
