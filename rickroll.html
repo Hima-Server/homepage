@@ -28,7 +28,10 @@
     <link rel="stylesheet" href="/style.css" type="text/css">
     <style>
       video {
+        display: block;
         width: 100%;
+        height: auto;
+        background: black;
       }
     </style>
   </head>
@@ -46,8 +49,10 @@
       window.onload = function() {
         window.scrollTo(0, document.body.scrollHeight);
         setTimeout(() => {
-          document.querySelector('video').play()
-        }, 1000);
+          document.querySelector('video').play().catch(err => {
+            console.error('Video playback failed:', err);
+          });
+        }, 3000);
       }
     </script>
   </body>
