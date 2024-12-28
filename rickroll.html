@@ -35,7 +35,7 @@
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
-      <video autoplay>
+      <video playsinline>
         <source src="https://cdn.oto.pet/vid/rickroll.mp4" type="video/mp4">
         Your browser does not support video playback.
       </video>
@@ -44,7 +44,10 @@
     <script src="/scripts/script.js"></script>
     <script>
       window.onload = function() {
-        window.scrollTo(0, document.body.scrollHeight)
+        window.scrollTo(0, document.body.scrollHeight);
+        setTimeout(() => {
+          document.querySelector('video').play()
+        }, 1000);
       }
     </script>
   </body>
