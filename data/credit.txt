@@ -7,10 +7,16 @@
 [音猫｡](https://www.otoneko.cat/)
 [恋鈴](https://www.koirdsuzu.com/)
 [えれん](https://twitter.com/veccolean)
-その他、#[支援者](/donate.html)の方々。
+その他、#[支援者](/donate.html)の皆様。
 ### サイト制作
 [音猫｡](https://www.otoneko.cat/)
-### マイクラサーバー借り先
+### BOT制作
+[音猫｡](https://www.otoneko.cat/)
+[もち](https://twitter.com/omonukko)
+### マイクラ関連
+#### プラグイン制作
+[恋鈴](https://www.koirdsuzu.com/)
+#### サーバー貸出
 [Harukoto](https://harukoto.jp/)
 ### 関連サービス
 [Oto Home](https://www.otoho.me/)

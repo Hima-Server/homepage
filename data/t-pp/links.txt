@@ -3,4 +3,5 @@
 - #[利用規約](#terms)
 - #[個人情報保護方針](#privacy-policy)
 - #[特定商取引法に基づく表記](#sctl)
+- #[クレジット](#credit)
 - #[License](#license)
