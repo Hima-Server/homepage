@@ -8,7 +8,7 @@ if (isJavaScriptEnabled) {
 }
 
 // Base
-function popup(message) {
+function popup(message, timeout = true) {
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
   const popup = document.createElement('div');
@@ -21,9 +21,11 @@ function popup(message) {
     overlay.remove();
   });
 
-  setTimeout(() => {
-    overlay.remove();
-  }, 1000);
+  if (timeout) {
+    setTimeout(() => {
+      overlay.remove();
+    }, 1000);
+  }
 }
 
 async function fetchJson(path) {

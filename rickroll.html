@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
 
-    <title>暇人鯖 - Rick Roll</title>
+    <title>暇人鯖 - ☺</title>
     <meta name="description" content="暇人鯖のホームページです">
     <meta name="keywords" content="暇人鯖,discord,minecraft">
     <meta name="theme-color" content="#ffff00">
 
-    <meta property="og:title" content="暇人鯖 - Rick Roll">
+    <meta property="og:title" content="暇人鯖 - ☺">
     <meta property="og:description" content="暇人鯖のホームページです">
     <meta property="og:image" content="https://www.hima-server.com/img/logo.png">
     <meta property="og:url" content="https://www.hima-server.com">
@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="暇人鯖">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="暇人鯖 - Rick Roll">
+    <meta name="twitter:title" content="暇人鯖 - ☺">
     <meta name="twitter:description" content="暇人鯖のホームページです">
     <meta name="twitter:image" content="https://www.hima-server.com/img/logo.png">
     <meta name="twitter:url" content="https://www.hima-server.com">
@@ -47,14 +47,20 @@
     <script src="/scripts/script.js"></script>
     <script>
       window.onload = function() {
-        popup('Hi.');
+        popup('Click Here!', false);
         window.scrollTo(0, document.body.scrollHeight);
-        setTimeout(() => {
-          document.querySelector('video').play().catch(err => {
-            console.error('Video playback failed:', err);
-          });
-        }, 3000);
-      }
+
+        document.body.addEventListener('click', function handleClick() {
+          setTimeout(() => {
+            const video = document.querySelector('video');
+            video.play().catch(err => {
+              console.error('Video playback failed:', err);
+            });
+          }, 3000);
+
+          document.body.removeEventListener('click', handleClick);
+        });
+      };
     </script>
   </body>
 </html>
