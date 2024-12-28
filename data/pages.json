@@ -63,11 +63,6 @@
     "priority": "0.1"
   },
   {
-    "title": "無料プレゼント",
-    "href": "https://r.oto.pet/present4u",
-    "blank": true
-  },
-  {
     "title": "ステータス",
     "href": "https://status.hima-server.com/",
     "blank": true
@@ -75,6 +70,11 @@
   {
     "title": "旧ホームページ",
     "href": "https://hima.elpher.org/",
+    "blank": true
+  },
+  {
+    "title": "無料プレゼント企画",
+    "href": "https://r.oto.pet/present4u",
     "blank": true
   }
 ]
