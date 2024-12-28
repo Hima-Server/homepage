@@ -26,6 +26,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="apple-touch-icon" sizes="2048x2048" href="https://www.hima-server.com/img/icon.png">
     <link rel="stylesheet" href="/style.css" type="text/css">
+    <style>
+      video {
+        display: none;
+        width: 100%;
+        height: auto;
+        background: black;
+        margin: 50px 0;
+      }
+    </style>
   </head>
   <body>
     <div id="pagetop"></div>
@@ -37,6 +46,10 @@
         あなたは過去の行いを反省し、行いを改めますか？
       </p>
       <button class="maxwidth" onclick="appeal()">申請する</button>
+      <video playsinline>
+        <source src="https://cdn.oto.pet/vid/rickroll.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
     </div>
     <script src="/scripts/functions.js"></script>
     <script src="/scripts/script.js"></script>
@@ -57,7 +70,14 @@
 
         popup(messages[Math.floor(Math.random() * messages.length)]);
         setTimeout(() => {
-          window.location.href = '/rickroll.html';
+          const video = document.querySelector('video');
+          video.style.display = 'block';
+          window.scrollTo(0, document.body.scrollHeight);
+          setTimeout(() => {
+            video.play().catch(err => {
+              console.error('Video playback failed:', err);
+            });
+          }, 500);
         }, 1000);
       }
     </script>

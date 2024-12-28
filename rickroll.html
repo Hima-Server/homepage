@@ -48,10 +48,10 @@
     <script>
       window.onload = function() {
         popup('Click Here!', false);
-        window.scrollTo(0, document.body.scrollHeight);
 
         document.body.addEventListener('click', function handleClick() {
           setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
             const video = document.querySelector('video');
             video.play().catch(err => {
               console.error('Video playback failed:', err);
