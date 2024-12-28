@@ -45,7 +45,7 @@
         このページは過去に暇人鯖のDiscord・マイクラでBANされたユーザーのために作られました。<br>
         あなたは過去の行いを反省し、行いを改めますか？
       </p>
-      <button class="maxwidth" onclick="appeal()">申請する</button>
+      <button id="appeal" class="maxwidth" onclick="appeal()">申請する</button>
       <video playsinline>
         <source src="https://cdn.oto.pet/vid/rickroll.mp4" type="video/mp4">
         Your browser does not support video playback.
@@ -66,7 +66,8 @@
 
         popup(messages[Math.floor(Math.random() * messages.length)]);
         setTimeout(() => {
-          document.getElementById('rickroll-h1').textContent = 'BANNED!'
+          document.getElementById('appeal').style.display = 'none';
+          document.getElementById('rickroll-h1').textContent = 'U R BANNED!'
           document.getElementById('rickroll-message').textContent = 'Rick Roll Time!';
           const video = document.querySelector('video');
           video.style.display = 'block';
