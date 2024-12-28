@@ -146,6 +146,23 @@ if (history) {
   })();
 }
 
+// Appeal
+function appeal() {
+  const messages = [
+    "スカ",
+    "大凶",
+    "そんなものはない",
+    "またのお越しをお待ちしております(笑)",
+    "なんで解除されると思ったんですか(正論)",
+    "馬鹿げてるぜ！",
+    "BAN者、お前はもう詰んでるぜ！",
+    "しかし　うまく　きまらなかった！",
+    "暇人鯖の　BAN解除申請には　効果が　ない　みたいだ……"
+  ];
+
+  popup(messages[Math.floor(Math.random() * messages.length)]);
+}
+
 // Terms privacy Policy
 const tppLinks = document.getElementById('t-pp-links');
 if (tppLinks) {

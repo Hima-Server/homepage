@@ -80,6 +80,7 @@
       <h3 id="is-javascript-enabled">このメッセージが消えずに表示されている場合、ページが正しく表示されていません。JavaScriptを有効にしてください。</h3>
       <div class="countdown">
         <p id="clock"><span id="year">--</span>-<span id="month">--</span>-<span id="day">--</span> <span id="hour">--</span>:<span id="minute">--</span>:<span id="second">--</span></p>
+        <h6>年明けまで 残り <span id="rday">--</span>日 <span id="rhour">--</span>時間 <span id="rminute">--</span>分 <span id="rsecond">--</span>秒</h6>
       </div>
     </div>
     <script src="/scripts/functions.js"></script>
@@ -93,7 +94,6 @@
         const year = jstNow.getFullYear();
         const month = String(jstNow.getMonth() + 1).padStart(2, '0');
         const day = String(jstNow.getDate()).padStart(2, '0');
-
         const hour = String(jstNow.getHours()).padStart(2, '0');
         const minute = String(jstNow.getMinutes()).padStart(2, '0');
         const second = String(jstNow.getSeconds()).padStart(2, '0');
@@ -105,7 +105,22 @@
         document.getElementById('minute').textContent = minute;
         document.getElementById('second').textContent = second;
 
-        if (year === 2025 && month === '01' && day === '01' && hour === '00' && minute === '00' && second === '00') {
+        const nextYearJST = new Date(jstNow.getTime());
+        nextYearJST.setFullYear(year + 1, 0, 1);
+        nextYearJST.setHours(0, 0, 0, 0);
+        const diff = nextYearJST.getTime() - jstNow.getTime() + 1000;
+
+        const rday = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const rhour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const rminute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const rsecond = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('rday').textContent = rday;
+        document.getElementById('rhour').textContent = rhour;
+        document.getElementById('rminute').textContent = rminute;
+        document.getElementById('rsecond').textContent = rsecond;
+
+        if (rday === 0 && rhour === 0 && rminute === 0 && rsecond === 0) {
           happyNewYear();
         }
       }
@@ -114,11 +129,11 @@
         document.getElementById('clock').style.color = '#daa520';
         const div = document.getElementById('happynewyear');
         const message = document.getElementById('akeome');
-        message.textContent = 'Goodbye 2024...'
+        message.textContent = 'Goodbye ' + (new Date().getFullYear() - 1) + '...';
         div.style.display = 'block';
 
         const originalText = message.textContent;
-        const newText = "Happy New Year 2025!!!";
+        const newText = "Happy New Year " + new Date().getFullYear() + "!!!";
         let index = 0;
 
         const removeInterval = setInterval(() => {
@@ -138,7 +153,7 @@
                   setTimeout(() => {
                     div.style.display = 'none';
                   }, 10000);
-                }, 300)
+                }, 300);
               }
             }, 200);
           }

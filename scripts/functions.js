@@ -8,6 +8,24 @@ if (isJavaScriptEnabled) {
 }
 
 // Base
+function popup(message) {
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.innerHTML = `<p>${message}</p>`;
+  overlay.appendChild(popup);
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', () => {
+    overlay.remove();
+  });
+
+  setTimeout(() => {
+    overlay.remove();
+  }, 1000);
+}
+
 async function fetchJson(path) {
   console.log(`Try to fetch ${path}.`);
   const response = await fetch(path);

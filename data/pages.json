@@ -42,9 +42,16 @@
     "priority": "0.7"
   },
   {
+    "title": "BAN解除申請",
+    "href": "/appeal.html",
+    "lastmod": "2024-12-28",
+    "changefreq": "monthly",
+    "priority": "0.1"
+  },
+  {
     "title": "時計",
     "href": "/clock.html",
-    "lastmod": "2024-12-27",
+    "lastmod": "2024-12-28",
     "changefreq": "monthly",
     "priority": "0.2"
   },

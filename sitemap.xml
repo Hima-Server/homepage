@@ -23,13 +23,25 @@
     <loc>https://www.hima-server.com/donate.html</loc>
     <lastmod>2024-12-26</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.hima-server.com/history.html</loc>
     <lastmod>2024-12-26</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hima-server.com/gallery.html</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.hima-server.com/clock.html</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.hima-server.com/t-pp.html</loc>
