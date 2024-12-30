@@ -10,7 +10,7 @@ a[target="_blank"].go-donate::after {
   content: none;
 }
 
-#donators {
+#donators-div {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
