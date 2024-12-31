@@ -1,6 +1,7 @@
 - Google Play
 - iTunesカード
 - Amazonギフト
+- Kyash
 - PayPay
 - PayPal
 - 支援絵
