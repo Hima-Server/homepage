@@ -146,6 +146,16 @@ if (history) {
   })();
 }
 
+// Gallery
+const galleryLinks = document.getElementById('gallery-links');
+if (galleryLinks) {
+  (async () => {
+    const galleryText = await fetchText('/data/gallery/links.txt');
+    const galleryList = replaceMarkdown(galleryText);
+    galleryLinks.innerHTML = galleryList;
+  })();
+}
+
 // Terms privacy Policy
 const tppLinks = document.getElementById('t-pp-links');
 if (tppLinks) {
