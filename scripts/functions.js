@@ -67,7 +67,7 @@ function replaceMarkdown(markdownText) {
     return placeholder;
   });
 
-  markdownText = markdownText.replace(/\\([*_~|`>[\]()\-!])/g, (match, p1, offset) => {
+  markdownText = markdownText.replace(/\\([%*_~|`>[\]()\-!])/g, (match, p1, offset) => {
     const placeholder = `&ESCAPEDCHAR!!${offset}!!;`;
     escapePlaceholders[placeholder] = p1;
     return placeholder;
@@ -99,6 +99,14 @@ function replaceMarkdown(markdownText) {
   markdownText = markdownText.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" title="$1" alt="$1">');
   markdownText = markdownText.replace(/#\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>');
   markdownText = markdownText.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank">$1</a>');
+
+  markdownText = markdownText
+    .replace(/%y%/g, `${new Date().getFullYear()}`)
+    .replace(/%mo%/g, `${String(new Date().getMonth() + 1).padStart(2, '0')}`)
+    .replace(/%d%/g, `${String(new Date().getDate()).padStart(2, '0')}`)
+    .replace(/%h%/g, `${String(new Date().getHours()).padStart(2, '0')}`)
+    .replace(/%m%/g, `${String(new Date().getMinutes()).padStart(2, '0')}`)
+    .replace(/%s%/g, `${String(new Date().getSeconds()).padStart(2, '0')}`);
 
   markdownText = markdownText.replace(/(\d+\.\s+.*(?:\n\d+\.\s+.*)*)/gim, (match) => {
     const items = match
@@ -153,7 +161,7 @@ document.addEventListener('click', (event) => {
 // Page Top
 const pagetop = document.getElementById('pagetop');
 if (pagetop) {
-  const number = Math.floor(Math.random() * 10);
+  const number = Math.floor(Math.random() * 12);
   pagetop.style.backgroundImage = `url("/img/top-backgrounds/${number}.png")`
   const home = document.createElement('div');
   home.id = 'home';

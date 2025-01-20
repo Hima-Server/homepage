@@ -162,7 +162,7 @@ tppDescriptions.forEach(async (description) => {
   if (dataPath) {
     try {
       const text = await fetchText(dataPath);
-      description.innerHTML = dataPath === 'LICENSE' ? text : replaceMarkdown(text);
+      description.innerHTML = replaceMarkdown(text);
     } catch (error) {
       console.error(`Failed to fetch or process markdown for ${dataPath}:`, error);
     }
