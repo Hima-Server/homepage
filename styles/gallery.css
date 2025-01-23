@@ -5,3 +5,26 @@ section img {
   padding: 10px;
   margin: 10px;
 }
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.image-overlay img {
+  max-width: none;
+  max-height: none;
+  background-color: #333333;
+  border-radius: 15px;
+  border: 2px solid #daa520;
+  padding: 10px;
+  margin: 10px;
+}

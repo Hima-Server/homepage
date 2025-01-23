@@ -2,29 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <link rel="alternate" hreflang="ja" href="https://www.hima-server.com/">
-
     <title>暇人鯖 - ギャラリー</title>
-    <meta name="description" content="暇人鯖のホームページです">
-    <meta name="keywords" content="暇人鯖,discord,minecraft">
-    <meta name="theme-color" content="#ffff00">
-
-    <meta property="og:title" content="暇人鯖 - ギャラリー">
-    <meta property="og:description" content="暇人鯖のホームページです">
-    <meta property="og:image" content="https://www.hima-server.com/img/logo.png">
-    <meta property="og:url" content="https://www.hima-server.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="暇人鯖">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="暇人鯖 - ギャラリー">
-    <meta name="twitter:description" content="暇人鯖のホームページです">
-    <meta name="twitter:image" content="https://www.hima-server.com/img/logo.png">
-    <meta name="twitter:url" content="https://www.hima-server.com">
-    <meta name="twitter:site" content="@hima_discord">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="apple-touch-icon" sizes="2048x2048" href="https://www.hima-server.com/img/icon.png">
     <link rel="stylesheet" href="/style.css" type="text/css">
     <link rel="stylesheet" href="/styles/gallery.css" type="text/css">
   </head>
@@ -93,5 +72,45 @@
     </div>
     <script src="/scripts/functions.js"></script>
     <script src="/scripts/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mainContent = document.querySelector(".main-content");
+        const overlay = document.createElement("div");
+        overlay.classList.add("image-overlay");
+        overlay.innerHTML = "<img src='' alt='拡大画像'>";
+        document.body.appendChild(overlay);
+
+        const overlayImage = overlay.querySelector("img");
+
+        mainContent.addEventListener("click", (event) => {
+          if (event.target.tagName === "IMG") {
+            const imgSrc = event.target.src;
+
+            const tempImage = new Image();
+            tempImage.src = imgSrc;
+            tempImage.onload = () => {
+              const screenWidth = window.innerWidth * 0.9;
+              const screenHeight = window.innerHeight * 0.9;
+
+              if (tempImage.width / tempImage.height > screenWidth / screenHeight) {
+                overlayImage.style.width = `${screenWidth}px`;
+                overlayImage.style.height = "auto";
+              } else {
+                overlayImage.style.height = `${screenHeight}px`;
+                overlayImage.style.width = "auto";
+              }
+
+              overlayImage.src = imgSrc;
+              overlay.style.display = "flex";
+            };
+          }
+        });
+
+        overlay.addEventListener("click", () => {
+          overlay.style.display = "none";
+          overlayImage.src = "";
+        });
+      });
+    </script>
   </body>
 </html>
