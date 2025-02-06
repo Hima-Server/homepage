@@ -7,6 +7,14 @@
 @import url('/styles/staff.css');
 
 /* Base */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
   background-color: #fafaef;
@@ -257,8 +265,13 @@ footer p {
   max-height: calc(100% - 80px);
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none;
   padding: 0;
   margin: 0;
+}
+
+.menu ul::-webkit-scrollbar {
+  display: none;
 }
 
 .menu li {
@@ -314,6 +327,7 @@ footer p {
   max-height: calc(100% - 36px);
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none;
   background-color: #d3d3d3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -321,6 +335,10 @@ footer p {
   align-items: center;
   z-index: 1000;
   padding-top: 10px;
+}
+
+.social-links::-webkit-scrollbar {
+  display: none;
 }
 
 .social-links a {
