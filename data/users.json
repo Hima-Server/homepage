@@ -22,7 +22,7 @@
   "sub-owners": [
     {
       "name": "もち",
-      "id": "1290950698216980523",
+      "id": "1167242187285737582",
       "social": {
         "href": "omonukko",
         "type": "twitter"
@@ -47,7 +47,7 @@
     },
     {
       "name": "Paicha",
-      "id": "1095588875411390587",
+      "id": "1329412892100923414",
       "social": {
         "href": "voidpro_dev",
         "type": "twitter"
@@ -56,7 +56,7 @@
     },
     {
       "name": "あぬ",
-      "id": "1297270754806726718",
+      "id": "1150030986969616388",
       "description": "Kawaii Developer."
     },
     {
@@ -130,15 +130,6 @@
     }
   ],
   "planners": [
-    {
-      "name": "さとる",
-      "id": "1231904859184173096",
-      "social": {
-        "href": "satu_r_",
-        "type": "twitter"
-      },
-      "description": "Buzz Illustrator."
-    },
     {
       "name": "マイケル",
       "id": "1131937821062594701",
