@@ -137,7 +137,7 @@ function replaceMarkdown(markdownText) {
 
 async function getDiscordUserInfo(userId) {
   const url = `https://avatar-cyan.vercel.app/api/${userId}`;
-  return (await fetchJson(url)).avatarUrl;
+  return (await fetchJson(url));
 }
 
 // Redirect
