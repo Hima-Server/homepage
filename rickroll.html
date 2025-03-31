@@ -38,6 +38,7 @@
   <body>
     <div id="pagetop"></div>
     <div class="main-content">
+      <p id="af"></p>
       <video playsinline>
         <source src="https://cdn.oto.pet/vid/rickroll.mp4" type="video/mp4">
         Your browser does not support video playback.
@@ -51,6 +52,8 @@
 
         document.body.addEventListener('click', function handleClick() {
           setTimeout(() => {
+            const af = document.getElementById("af");
+            af.textContent = "エイプリルフールだヨ！景品はRickrollだ:)"
             window.scrollTo(0, document.body.scrollHeight);
             const video = document.querySelector('video');
             video.play().catch(err => {
